@@ -3,5 +3,8 @@ export default openMenuPage;
 
 
 function openMenuPage() {
+    Index.clearContent();
+
+    Index.createPageHeader("Menu", "h1");
 
 }

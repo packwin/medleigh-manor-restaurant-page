@@ -32,6 +32,7 @@ function createPageHeader(headerText, headerType) {
     return header;
 }
 
-
 const exports =  { content, clearContent, createPageHeader };
 export default exports;
+
+openHomePage();
