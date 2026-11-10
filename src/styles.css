@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "Tangerine";
+    src: url("./fonts/Tangerine/Tangerine-Regular.ttf");
+}
+@font-face {
+    font-family: "Tangerine-Bold";
+    src: url("./fonts/Tangerine/Tangerine-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("./fonts/Cinzel/Cinzel-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Castoro";
+    src: url("./fonts/Castoro/Castoro-VariableFont_wght.ttf");
+}
+
+body {
+    margin: 0 2vw;
+    
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    font-family: "Castoro";
+
+    min-height: 100vh;
+}
+
+header {
+    padding: 1em 0 0.5em 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed gray;
+
+    position: sticky;
+}
+
+#logo {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: .25em;
+}
+
+#logo h1 {
+    padding: 0;
+    margin: 0;
+
+    font-family: "Tangerine";
+    font-size: 2.5em;
+}
+
+#logo h3 {
+    padding: 0;
+    margin: 0;
+
+    font-family: "Castoro";align-self: flex-end;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+nav button {
+    padding: .2em 1em;
+
+    font-family: "Cinzel";
+    font-weight: bold;
+    font-size: 1em;
+
+    background: none;
+    border: none;
+}
+
+nav button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#content {
+    margin: 0 3em;
+}
+
+#page-header {
+    padding: 0;
+    margin: 0;
+
+    font-family: "Cinzel";
+    font-size: 5em;
+    text-align: center;
+}
+
+.text-container {
+    text-align: center;
+    margin: 0 20vw;
+}
+
+.text-container > p:first-child {
+    margin-top: 0;
+}
+
+footer {
+    margin-top: auto;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    
+
+    border-top: 1px dashed gray;
+}
+
+footer a,
+footer a:visited {
+    text-decoration: underline;
+    color: black;
+}
