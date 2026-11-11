@@ -7,6 +7,17 @@ function openHomePage() {
 
     Index.createPageHeader("Home", "h1");
 
+    const intro = document.createElement("p");
+    intro.id = "intro";
+    intro.textContent = "The Medleigh Manor serves as a chance for young families, couples, and the community to experience fine dining at an affordable price."
+    + "\nWith our specialty fusion of French, Italian, and Turkish cuisines, you will find delicious dishes that reflect your own home cooked meals or fine meals only found in the most prestigious of places.";
+    Index.content.append(intro);
+
+    const reviewHeader = document.createElement("h1");
+    reviewHeader.textContent = "Reviews";
+    reviewHeader.style.textAlign = "center";
+    Index.content.append(reviewHeader);
+
     const reviewGrid = document.createElement("div");
     reviewGrid.id = "review-grid";
     Index.content.append(reviewGrid);
@@ -28,10 +39,11 @@ function openHomePage() {
 
     const reviews = [
         createReview("Monsieur Jack Hawthorn", "Lovely food. Delicious atmosphere."),
-        createReview("Madame Jill Hampton", "Lovely food. Delicious atmosphere."),
-        createReview("Monsieur John Horter", "Lovely food. Delicious atmosphere."),   
-        createReview("Madame Joanne Hawkes", "Lovely food. Delicious atmosphere."),  
-        createReview("Monsieur Joseph Haughty", "Lovely food. Delicious atmosphere."),
+        createReview("Madame Jill Hampton", "Delicious food. Lovely atmosphere."),
+        createReview("Monsieur John Horter", "Spectacular food, great environs, and lovely service."),   
+        createReview("Madame Joanne Hawkes", "A lovely place to feel fancy and eat good food."),  
+        createReview("Monsieur Joseph Haughty", "A must visit location if you are within 200km of Medleigh State."),
+        createReview("Madame Jolene Hadley", "Delicious French and Italian fusion with excellent service."),
     ];
     
     reviews.forEach((review) => reviewGrid.append(review));
@@ -41,41 +53,53 @@ function openHomePage() {
     bookBtn.id = "btn-book";
     content.append(bookBtn);
 
+    const addressTimetableDiv = document.createElement("div");
+    addressTimetableDiv.id = "address-timetable";
+    content.append(addressTimetableDiv);
+
+    const addressDiv = document.createElement("div");
+    addressDiv.id = "address-div";
+    addressTimetableDiv.append(addressDiv);
+    
+    const addressHeader = document.createElement("h4");
+    addressHeader.textContent = "Location";
+    addressDiv.append(addressHeader);
+
     const address = document.createElement("h4");
     address.id = "address";
-    content.append(address);
+    address.textContent = "21 Medley Lane, Medleigh 7067";
+    addressDiv.append(address);
 
     const timetableDiv = document.createElement("div");
     timetableDiv.id = "timetable-div";
-    content.append(timetableDiv);
+    addressTimetableDiv.append(timetableDiv);
 
     const timetableHeader = document.createElement("h4");
     timetableHeader.textContent = "Open Hours";
     timetableDiv.append(timetableHeader);
 
-    const timetable = document.createElement("ul");
+    const timetable = document.createElement("div");
     timetable.id = "timetable";
     timetableDiv.append(timetable);
 
-    const ttMonday = document.createElement("li");
-    ttMonday.textContent = "Monday: 3pm - 10pm";
-    timetable.append(ttMonday); 
-    const ttTuesday = document.createElement("li");
-    ttTuesday.textContent = "Tuesday: 3pm - 10pm";
-    timetable.append(ttTuesday); 
-    const ttWednesday = document.createElement("li");
-    ttWednesday.textContent = "Wednesday: 3pm - 10pm";
-    timetable.append(ttWednesday); 
-    const ttThursday = document.createElement("li");
-    ttThursday.textContent = "Thursday: 5pm - 10pm";
-    timetable.append(ttThursday); 
-    const ttFriday = document.createElement("li");
-    ttFriday.textContent = "Friday: 3pm - 11pm";
-    timetable.append(ttFriday); 
-    const ttSaturday = document.createElement("li");
-    ttSaturday.textContent = "Saturday: 5pm - 1am";
-    timetable.append(ttSaturday); 
-    const ttSunday = document.createElement("li");
-    ttSunday.textContent = "Sunday: 10am - 9pm";
-    timetable.append(ttSunday); 
+    function createTimetableEntry(dayName, times) {
+        const entryHeader = document.createElement("h5");
+        entryHeader.textContent = dayName;
+        entryHeader.classList.add("timetable-entry");
+
+        const entryContent = document.createElement("p");
+        entryContent.textContent = times;
+        entryContent.classList.add("timetable-entry");
+
+        timetable.prepend(entryHeader);
+        timetable.append(entryContent);
+    }
+
+        createTimetableEntry("Sunday", "10am - 8pm");
+        createTimetableEntry("Saturday", "5pm - 1am");
+        createTimetableEntry("Friday", "3pm - 11pm");
+        createTimetableEntry("Thursday", "5pm - 10pm");
+        createTimetableEntry("Wednesday", "3pm - 10pm");
+        createTimetableEntry("Tuesday", "3pm - 10pm");
+        createTimetableEntry("Monday", "3pm - 10pm");
 }

@@ -7,4 +7,9 @@ function openMenuPage() {
 
     Index.createPageHeader("Menu", "h1");
 
+    const comingSoon = document.createElement("h2");
+    comingSoon.style.textAlign = "center";
+    comingSoon.textContent = "Coming Soon!";
+    Index.content.append(comingSoon);
+
 }
