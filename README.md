@@ -1,1 +1,1 @@
-# medleigh-manor-restaurant-page
+# webpack-template
